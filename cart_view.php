@@ -32,7 +32,7 @@
 	        		<?php
 	        			if(isset($_SESSION['user'])){
 	        				echo "
-	        					<div id='paypal-button'></div>
+	        					<button id='pay-button' class='bg-blue-500 text-white px-4 py-2 rounded'>Pagar</button>
 	        				";
 	        			}
 	        			else{
@@ -125,6 +125,12 @@ $(function(){
 			}
 		});
 	});
+
+	// Evento del botón de pagar
+    $(document).on('click', '#pay-button', function(e){
+        e.preventDefault();
+        window.location.href = 'payment.php?total=' + total;
+    });
 
 	getDetails();
 	getTotal();

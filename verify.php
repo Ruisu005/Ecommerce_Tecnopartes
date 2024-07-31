@@ -21,6 +21,8 @@
 						else{
 							$_SESSION['user'] = $row['id'];
 						}
+						header('location: index.php'); // Redirige a la página principal
+                    exit();
 					}
 					else{
 						$_SESSION['error'] = 'Incorrect Password';
